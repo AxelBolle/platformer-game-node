@@ -1,12 +1,25 @@
-'use strict'
+require('../styles/main.sass');
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+import BootState from './states/Boot'
+import SplashState from './states/Splash'
+import StartMenuState from './states/Start'
+import GameState from './states/Game'
 
-function preload() {
+import config from './config'
+
+class Game extends Phaser.Game {
+  constructor () {
+    const width = config.gameWidth
+    const height = config.gameHeight
+
+    super(width, height, Phaser.CANVAS, 'game', null)
+
+    this.state.add('Boot', BootState, false)
+    this.state.add('Splash', SplashState, false)
+    this.state.add('Start', StartMenuState, false)
+    this.state.add('Game', GameState, false)
+
+    this.state.start('Boot')
+  }
 }
-
-function create() {
-}
-
-function update() {
-}
+window.game = new Game()
