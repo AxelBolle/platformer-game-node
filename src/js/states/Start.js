@@ -2,11 +2,8 @@ export default class extends Phaser.State {
   init () {}
 
   preload () {
-    this.load.image('sky', './assets/images/sky.png')
   }
   create () {
-    this.sky = game.add.tileSprite(0, 0, 3000, 600, 'sky')
-
     let style = {align: "center", font: "50px Arial", fill: '#ffffff'}
     let menu = []
     let menuItem1 = game.add.text(this.game.world.centerX, this.game.world.centerY, 'Play', style)
@@ -32,7 +29,8 @@ export default class extends Phaser.State {
     }
   }
   render () {
-    game.input.keyboard.isDown(Phaser.Keyboard.LEFT) && this.state.start('Game')
-    game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) && this.sky.tilePosition.x--
+    this.state.start('Game')
+    // game.input.keyboard.isDown(Phaser.Keyboard.LEFT) && this.state.start('Game')
+    // game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) && this.sky.tilePosition.x--
   }
 }
