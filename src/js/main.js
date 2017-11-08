@@ -7,7 +7,8 @@ import GameState from './states/Game'
 class Game extends Phaser.Game {
   constructor () {
 
-    super(800, 600, Phaser.CANVAS, 'game', null)
+    super(1366, 768, Phaser.CANVAS, 'game', null)
+    // super(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'game', null)
 
     this.state.add('Boot', BootState, false)
     this.state.add('Splash', SplashState, false)
