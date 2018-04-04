@@ -6,4 +6,4 @@
 
 
 
-Example site running at axelbolle.com/edward
+Example site running at http://www.axelbolle.com/edward
